@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import ContactItem from '../ContactItem/ContactItem';
 import styles from './ContactList.module.css';
 import { useDispatch } from 'react-redux';
-import { nanoid } from 'nanoid';
 
 export default function ContactList({ contacts, filter, onDeleteContact }) {
   const dispatch = useDispatch();
