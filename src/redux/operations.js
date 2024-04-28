@@ -106,7 +106,7 @@ export const login = createAsyncThunk('user/login', async (user, thunkAPI) => {
 
 export const logout = createAsyncThunk('user/logout', async (_, thunkAPI) => {
   try {
-    const response = await signOut(auth);
+    await signOut(auth);
   } catch (error) {
     return thunkAPI.rejectWithValue(error.message);
   }
