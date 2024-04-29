@@ -55,7 +55,7 @@ export default function LoginPage() {
         Login
       </Typography>
       <TextField
-        id="outlined-basic"
+        id="email"
         type="email"
         name="email"
         placeholder="Email"
@@ -63,7 +63,7 @@ export default function LoginPage() {
         onChange={handleChange}
       />
       <TextField
-        id="outlined-basic"
+        id="password"
         type="password"
         name="password"
         placeholder="Password"

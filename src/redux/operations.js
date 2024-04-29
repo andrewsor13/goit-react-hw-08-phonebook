@@ -83,6 +83,7 @@ export const register = createAsyncThunk(
         user.email,
         user.password
       );
+      localStorage.setItem('user', response.user);
       return response.user;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -97,7 +98,7 @@ export const login = createAsyncThunk('user/login', async (user, thunkAPI) => {
       user.email,
       user.password
     );
-    console.log(response.user);
+
     return response.user;
   } catch (error) {
     return thunkAPI.rejectWithValue(error.message);
@@ -107,6 +108,7 @@ export const login = createAsyncThunk('user/login', async (user, thunkAPI) => {
 export const logout = createAsyncThunk('user/logout', async (_, thunkAPI) => {
   try {
     await signOut(auth);
+    localStorage.clear();
   } catch (error) {
     return thunkAPI.rejectWithValue(error.message);
   }
